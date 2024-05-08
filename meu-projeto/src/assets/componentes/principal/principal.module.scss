@@ -1,0 +1,82 @@
+@import '../../styles/variaveis.scss';
+
+.container {
+    height: 100vh; /* Altura do container é 100% da altura da tela */
+}
+
+.container__escrita {
+    font-family: $fonte;
+    font-weight: 600;
+    color: $cor-azul;
+    padding: 10%;
+    font-size: 3rem;
+    overflow: hidden; /* Esconde o overflow do texto */
+    white-space: nowrap; /* Impede a quebra de linha no texto principal */
+}
+
+.texto_animado_span {
+    display: block;
+    color: $cor-azul;
+    font-size: 2.5;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.texto_animado h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40) forwards;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1%;
+}
+
+.buttonCurriculo {
+    opacity: 0; /* Inicialmente oculto */
+    background-color: $cor-background;
+    color: $cor-roxa;
+    border: 1px solid $cor-roxa;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    padding: 0.4%;
+    cursor: pointer;
+    transition: opacity 1s ease-in-out;
+}
+
+.buttonCurriculo:hover {
+    background-color: $cor-roxa;
+    color: $cor-background;
+    border: 1px solid $cor-background;
+    transition: 1s;
+}
+
+/* Mostrar o botão com transição */
+.showButton {
+    opacity: 1;
+}
+
+/* Estilos para telas menores, como celulares */
+@media only screen and (max-width: 600px) {
+    .container {
+        height: 100vh; /* Altura automática para ajuste ao conteúdo */
+    }
+
+    .container__escrita {
+        font-size: 1rem; /* Reduzir o tamanho da fonte para dispositivos menores */
+        margin-top: 250px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Colocar os botões em uma coluna */
+        margin-top: 5%; /* Ajustar a margem superior */
+        width: 50%;
+        justify-content: center;
+    }
+
+}

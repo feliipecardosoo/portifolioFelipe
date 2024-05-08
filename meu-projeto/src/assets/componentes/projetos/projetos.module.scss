@@ -9,16 +9,19 @@
     flex-direction: column;
     height: auto;
     gap: 15px;
-
     background-color: $cor-azul;
 }
 
 .escritas {
     font-family: $fonte;
     color: $cor-background;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
 
-    margin-top: 50px;
-
+.escritas__h1 {
+    font-size: 4rem;
+    font-weight: 300;
 }
 
 .projetos {
@@ -26,10 +29,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     flex-direction: column;
-
-    gap: 60px;
+    gap: 100px;
   }
   
   .card {
@@ -42,12 +43,16 @@
     cursor: pointer;
     opacity: 0; /* Começa com opacidade 0 para efeito de entrada */
     transition: opacity 5s ease; /* Define a transição de opacidade para 3 segundos */
+    margin-bottom: 200px;
+  }
 
-    margin-bottom: 20px;
-
+  .card { 
+    transform: translateY(+5px) scale(1.05); /* Aplica transformação de escala e transladação ao passar o mouse */
+    transition: 5s;
 
     &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.05); /* Aplica transformação de escala e transladação ao passar o mouse */
+        transition: 0.3s;
     }
 
     .imageContainer {
@@ -104,11 +109,13 @@
         align-items: center;
         justify-content: center;
         background-color: $cor-azul; /* Cor de fundo do botão */
-        color: #fff;
+        color: $cor-background;
         text-decoration: none;
         padding: 10px;
         border-radius: 0 0 8px 8px;
         transition: background-color 0.3s ease;
+
+        font-family: $fonte;
 
         &:hover {
             background-color: $cor-roxa; /* Cor de fundo do botão ao passar o mouse */

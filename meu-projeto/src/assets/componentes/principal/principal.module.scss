@@ -1,10 +1,12 @@
+// Importando variáveis de estilos
 @import '../../styles/variaveis.scss';
 
+// Estilos para a classe .container
 .container {
     height: 100vh;
 }
 
-
+// Estilos para a classe .container__escrita
 .container__escrita {
     font-family: $fonte;
     font-weight: 600;
@@ -15,12 +17,14 @@
     white-space: nowrap; /* Impede a quebra de linha no texto principal */
 }
 
+// Estilos para a classe .texto_animado_span
 .texto_animado_span {
     display: block;
     color: $cor-azul;
-    font-size: 2.5;
+    font-size: 5.5rem; // Corrigido para incluir unidade de medida (ex: rem)
 }
 
+// Animação de digitação para a classe .texto_animado h1
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -32,12 +36,14 @@
     animation: typing 3s steps(40) forwards;
 }
 
+// Estilos para a classe .buttons
 .buttons {
     display: flex;
     gap: 10px;
     margin-top: 1%;
 }
 
+// Estilos para a classe .buttonCurriculo
 .buttonCurriculo {
     opacity: 0; /* Inicialmente oculto */
     background-color: $cor-background;
@@ -45,7 +51,7 @@
     border: 1px solid $cor-roxa;
     border-radius: 10px;
     font-size: 1.3rem;
-    padding: 0.4%;
+    padding: 0.4em; // Corrigido para incluir unidade de medida (ex: em)
     cursor: pointer;
     transition: opacity 1s ease-in-out;
 }
@@ -57,15 +63,15 @@
     transition: 1s;
 }
 
-/* Mostrar o botão com transição */
+// Mostrar o botão com transição usando a classe .showButton
 .showButton {
     opacity: 1;
 }
 
-/* Estilos para telas menores, como celulares */
+// Estilos para telas menores, como celulares (media query)
 @media only screen and (max-width: 600px) {
     .container {
-        height: 100vh; /* Altura automática para ajuste ao conteúdo */
+        height: auto; /* Altura automática para ajuste ao conteúdo */
     }
 
     .container__escrita {
@@ -79,5 +85,15 @@
         width: 50%;
         justify-content: center;
     }
+}
 
+// Estilos para a classe .btnzap
+.btnzap {
+    color: $cor-azul;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 1s ease-in-out;
+
+    &.showButton {
+        opacity: 1; /* Torna visível quando a classe showButton é aplicada */
+    }
 }

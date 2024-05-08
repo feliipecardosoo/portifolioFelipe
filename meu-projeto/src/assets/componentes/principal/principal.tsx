@@ -1,30 +1,32 @@
-// Principal.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './principal.module.scss';
-import ResumePDF from '../../curriculo/Curriculo Felipe Cardoso.pdf'; // Caminho para o PDF do currículo
+import ResumePDF from '../../curriculo/Curriculo Felipe Cardoso.pdf';
+import Projetos from '../projetos/projetos';
 
 const Principal = () => {
     const [showButton, setShowButton] = useState(false);
+    const projetosRef = useRef<HTMLDivElement>(null); // Definir o tipo da referência como HTMLDivElement
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowButton(true);
-        }, 1500); // Mostrar os botões após 1.5 segundos
+        }, 1200);
 
         return () => clearTimeout(timer);
-    }, []); // Executar apenas uma vez ao montar o componente
+    }, []);
 
     const abrirCurriculoPDF = () => {
         window.open(ResumePDF, '_blank');
     };
 
-    const abrirProjetos = () => {
-        // Lógica para abrir a página de projetos ou exibir informações dos projetos
-        console.log('Abrir página de Projetos');
-        // Aqui você pode adicionar a lógica para abrir a página de projetos ou mostrar mais informações sobre os projetos
+    const scrollToProjetos = () => {
+        if (projetosRef.current) {
+            projetosRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
+        <>
         <div className={styles.container}>
             <div className={styles.container__escrita}>
                 <div className={styles.texto_animado}>
@@ -40,14 +42,19 @@ const Principal = () => {
                         </button>
                         <button
                             className={`${styles.buttonCurriculo} ${showButton ? styles.showButton : ''}`}
-                            onClick={abrirProjetos}
+                            onClick={scrollToProjetos}
                         >
                             Projetos
                         </button>
                     </div>
                 </div>
             </div>
+           
         </div>
+         <div ref={projetosRef}>
+         <Projetos />
+        </div>
+        </>
     );
 };
 

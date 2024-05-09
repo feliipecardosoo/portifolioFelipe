@@ -71,19 +71,25 @@
 // Estilos para telas menores, como celulares (media query)
 @media only screen and (max-width: 600px) {
     .container {
-        height: auto; /* Altura automática para ajuste ao conteúdo */
+        height: 100vh; /* Altura automática para ajuste ao conteúdo */
     }
 
     .container__escrita {
-        font-size: 1rem; /* Reduzir o tamanho da fonte para dispositivos menores */
+        font-size: 0.9rem; /* Reduzir o tamanho da fonte para dispositivos menores */
         margin-top: 250px;
+        width: 70%;
+    }
+    
+    .texto_animado_span {
+        font-size: 1.6rem;
     }
 
-    .buttons {
-        flex-direction: column; /* Colocar os botões em uma coluna */
-        margin-top: 5%; /* Ajustar a margem superior */
-        width: 50%;
-        justify-content: center;
+    .buttonCurriculo {
+        font-size: 1rem;
+    }
+
+    .btnzap {
+        font-size: 1.8rem;
     }
 }
 

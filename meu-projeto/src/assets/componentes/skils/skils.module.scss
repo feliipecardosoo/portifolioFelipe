@@ -19,23 +19,11 @@
     margin-top: 50px;
     max-width: 900px; /* Define a largura máxima do container */
   
-    @media (max-width: 1200px) {
-      justify-content: center; /* Centraliza os cards quando a largura da tela for menor */
-    }
-  
+   
     .skillCard {
       flex-basis: calc(33.33% - 40px); /* Calcula a largura de cada card (33.33% com gap de 20px) */
       max-width: calc(33.33% - 40px); /* Define a largura máxima de cada card */
   
-      @media (max-width: 768px) {
-        flex-basis: calc(50% - 40px); /* Em telas menores, 2 cards por linha */
-        max-width: calc(50% - 40px);
-      }
-  
-      @media (max-width: 480px) {
-        flex-basis: 100%; /* Em telas muito pequenas, 1 card por linha */
-        max-width: 100%;
-      }
     }
   }
   
@@ -99,5 +87,11 @@
   100% {
     transform: translateX(0) translateY(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .principal {
+    width: 90%;
   }
 }

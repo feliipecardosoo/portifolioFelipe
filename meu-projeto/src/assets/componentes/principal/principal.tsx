@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './principal.module.scss';
 import ResumePDF from '../../curriculo/Curriculo Felipe Cardoso.pdf';
 import Projetos from '../projetos/projetos';
 
 const Principal = () => {
     const [showButton, setShowButton] = useState(false);
-    const [showScrollIcon, setShowScrollIcon] = useState(false); // Inicializa como false
+    const [showScrollIcon, setShowScrollIcon] = useState(false); 
+    // Inicializa como false
+
+    showScrollIcon;
 
     const projetosRef = useRef<HTMLDivElement>(null);
 

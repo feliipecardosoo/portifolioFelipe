@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './skils.module.scss';
 
 const Skills = () => {

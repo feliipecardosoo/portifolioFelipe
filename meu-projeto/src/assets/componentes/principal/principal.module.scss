@@ -93,6 +93,30 @@
     }
 }
 
+@media only screen and (max-width: 950px) {
+    .container {
+        height: 100vh; /* Altura automática para ajuste ao conteúdo */
+    }
+
+    .container__escrita {
+        font-size: 1.5rem; /* Reduzir o tamanho da fonte para dispositivos menores */
+        margin-top: 250px;
+        width: 70%;
+    }
+    
+    .texto_animado_span {
+        font-size: 2.5rem;
+    }
+
+    .buttonCurriculo {
+        font-size: 1.2rem;
+    }
+
+    .btnzap {
+        font-size: 2.3rem;
+    }
+}
+
 // Estilos para a classe .btnzap
 .btnzap {
     color: $cor-azul;

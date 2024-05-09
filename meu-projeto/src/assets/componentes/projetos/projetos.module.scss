@@ -142,3 +142,18 @@
         width: 300px;
     }
 }
+
+@media only screen and (max-width: 950px) {
+
+    .pai {
+        width: auto;
+    }
+
+    .escritas__h1 {
+        font-size: 3rem;
+    }
+
+    .card {
+        width: 500px;
+    }
+}
